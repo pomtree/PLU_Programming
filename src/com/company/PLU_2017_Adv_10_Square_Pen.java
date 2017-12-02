@@ -50,7 +50,6 @@ public class PLU_2017_Adv_10_Square_Pen {
             in = new char[penSize][penSize];
             for (int line = 0; line < penSize; line++) {
                 String l = s.next();
-
                 for (int cn = 0; cn < penSize; cn++) {
                     in[line][cn] = l.charAt(cn);
                 }

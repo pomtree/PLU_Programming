@@ -32,35 +32,51 @@ code by Tom Pree, problem by PLU.
 import java.util.Scanner;
 
 public class PLU_2017_Adv_11_Seed_Purchasing {
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         Scanner s = new Scanner(System.in);
-        int setCount = s.nextInt();
-        for (int setNumb = 0; setNumb < setCount; setNumb++) {
-            int choiceCount = s.nextInt(); //seed choices
-            float budget = s.nextFloat();
-            float[][] f = new float[choiceCount][3];
-            for (int choiceNumb = 0; choiceNumb < choiceCount; choiceNumb++) {
-                f[choiceNumb][0] = s.nextFloat();       //price per bag
-                f[choiceNumb][1] = s.nextInt();         //crops per bag
-                f[choiceNumb][2] = s.nextFloat();       //income per crop
+        int dataSets = s.nextInt();
+        float out[] = new float[dataSets];
+        for (int dsc = 0; dsc < dataSets; dsc++) {
+            int seedChoices = s.nextInt();
+            float budget = s.nextFloat(), ib = budget;
+            float[][] seeds = new float[seedChoices][4];
+            for (int scs = 0; scs < seedChoices; scs++) {
+                seeds[scs][0] = s.nextFloat();                                      //price per bag
+                seeds[scs][1] = s.nextInt();                                        //crops per bag
+                seeds[scs][2] = s.nextFloat();                                      //price per crop
+                seeds[scs][3] = (seeds[scs][1] * seeds[scs][2]) / seeds[scs][0];    //best-ratio score
             }
+            int income = 0;
             while (budget > 0) {
-                for (int i = 0; i < choiceCount; i++) {
+                if (getBestDeal(seeds, budget) == -1) {
+                    budget = 0;
+
+                } else {
+                    float[] best = seeds[getBestDeal(seeds, budget)];
+                    budget -= best[0];
+                    income += best[1] * best[2];
 
                 }
+
             }
+            out[dsc] = income - ib;
+        }
+        for(int i = 0; i < dataSets; i++) {
+            System.out.println(out[i]);
         }
     }
 
-    public static int getBestDeal(float[][] f, int budget, int bagCount) {
-        int bestDealIndex = -1, bestCost = -1;
-        for (int i = 0; i < bagCount; i++) {
-            if (f[i][0] <= budget) {
-                //finish me );
-            }
+    private static int getBestDeal(float[][] f, float budget) {
+        float br = 0;
+        int brAt = -1;
+        for (int i = 0; i < f.length; i++) {
+            if (budget >= f[i][0] && br < f[i][3]) {
+                br = f[i][3];
+                brAt = i;
 
-        }
-        return bestDealIndex;
+            }
+         }
+        return brAt;
     }
 
 }
