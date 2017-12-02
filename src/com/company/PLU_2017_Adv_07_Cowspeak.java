@@ -1,5 +1,23 @@
 package com.company;
-
+/*
+7. Cowspeak
+The animals are conspiring again. The cows are mooing very strangely and you’re certain of it. Your theory
+is that the length of each “MM” sound and the length of the “OO” sound can be translated to hexadecimal
+values and then converted to ascii. Create a program to translate cowspeak to English so you can find out
+what they’re up to.
+Input
+The first line will contain a single integer n that indicates the number of data sets that follow. Each data set
+will consist of one line containing many space separated strings representing the cows’ moos.
+Output
+For each test case, output the decoded cowspeak
+Sample Input
+2
+MMMMOOOOOOOOOOOOO MMMMOOOOOOOOOOOOOOO MMMMOOOOOOOOOOOOOOO
+MMMMMMOOOOOOOO MMMMMMOOOOOOOOO
+Sample Output
+MOO
+hi
+ */
 import java.util.Scanner;
 
 public class PLU_2017_Adv_07_Cowspeak {
