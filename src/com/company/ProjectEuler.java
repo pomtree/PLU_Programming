@@ -140,21 +140,32 @@ public class ProjectEuler {
 
     public static void problem12() {
         boolean found = false;
-        int c =1,cv;
+        int c = 1, cv = -1, cf;
+        //System.out.println(countFactors(28));
         while (!found) {
             c++;
             cv = 0;
             //c is the place
-            for(int i = 0; i < c; i++) {
-                cv+=i;
+            for (int i = 0; i < c; i++) {
+                cv += i;
                 //if(i == 100)found = true;
             }
-            //System.out.println(c + " -> " + cv);
+            cf = countFactors(cv);
+            if (cf > 500) found = true;
         }
+        System.out.println(cv);
     }
 
 
     //  --basic methods used--
+
+    public static int countFactors(int in) {
+        int f = 0;
+        for (int i = 1; i <= in; i++) {
+            if (in % i == 0) f++;
+        }
+        return f;
+    }
 
     public static boolean isPrime(int n) {
         for (int i = 2; i < n; i++) {
