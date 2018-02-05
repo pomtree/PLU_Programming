@@ -19,6 +19,8 @@ MOO
 hi
  */
 
+//works 1/24/18
+
 import java.util.Scanner;
 
 public class PLU_2017_Adv_07_Cowspeak {
