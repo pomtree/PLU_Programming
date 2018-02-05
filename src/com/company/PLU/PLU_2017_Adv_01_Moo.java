@@ -30,7 +30,7 @@ ____,/
 */
 
 
-public class PLU_2017_Nov_01_Moo {
+public class PLU_2017_Adv_01_Moo {
     public static void main(String args[]) {
         System.out.print("(___)\n" +
                 "(o o)____/\n" +
