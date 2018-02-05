@@ -36,8 +36,22 @@ $12.00
 $101.62
  */
 
+import java.util.Scanner;
+
 public class PLU_2017_Adv_03_Shipping {
     public static void main(String args[]) {
-
+        Scanner s = new Scanner(System.in);
+        int dc = s.nextInt();
+        for (int cc = 0; cc < dc; cc++) {
+            int things = s.nextInt();
+            float total_cost = 0;
+            for (int thing_count = 0; thing_count < things; thing_count++) {
+                String garbage = s.next();
+                total_cost += s.nextFloat() * s.nextFloat();
+            }
+            System.out.print("$" + total_cost);
+            if ((total_cost * 100) % 100 == 0) System.out.print("0");
+            System.out.println();
+        }
     }
 }
