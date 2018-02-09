@@ -55,7 +55,7 @@ Sample Output
 ..*x*
 ...*.
  */
-public class PLU_2017_05_Scarecrows {
+public class PLU_2017_Adv_05_Scarecrows {
     public static void main(String args[]) {
         Scanner s = new Scanner(System.in);
         for (int testCase = s.nextInt(); testCase > 0; testCase--) {
