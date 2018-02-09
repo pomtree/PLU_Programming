@@ -1,0 +1,5 @@
+Hello
+These are the PLU prgramming competetion practice problems
+here is link
+https://www.cs.plu.edu/~blahakd/HSProgrammingContest/Contest2017/ProblemsAdvanced2017.pdf
+https://www.cs.plu.edu/~blahakd/HSProgrammingContest/Contest2017/ProblemsNovice2017.pdf
